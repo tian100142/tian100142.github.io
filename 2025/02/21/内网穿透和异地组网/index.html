@@ -4,13 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>夏天的博客</title>
+  <title>内网穿透和异地组网 | 夏天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="夏天的博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="内网穿透原理在实现内网穿透的方法中，对NAT设备的控制需求和是否需要第三方桥接情况各有不同，以下是具体分析：  需要控制NAT设备的方法 端口映射：此方法需要在NAT设备（如路由器）上进行手动配置，明确地将外部端口与内部设备的端口进行对应设置，以允许外部请求能正确到达内网设备，所以必须要对NAT设备有控制权限才能进行相关配置操作。  原理：在路由器或防火墙等网络设备上进行设置，将外部网络的特定端口">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内网穿透和异地组网">
+<meta property="og:url" content="http://example.com/2025/02/21/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%92%8C%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/index.html">
 <meta property="og:site_name" content="夏天的博客">
+<meta property="og:description" content="内网穿透原理在实现内网穿透的方法中，对NAT设备的控制需求和是否需要第三方桥接情况各有不同，以下是具体分析：  需要控制NAT设备的方法 端口映射：此方法需要在NAT设备（如路由器）上进行手动配置，明确地将外部端口与内部设备的端口进行对应设置，以允许外部请求能正确到达内网设备，所以必须要对NAT设备有控制权限才能进行相关配置操作。  原理：在路由器或防火墙等网络设备上进行设置，将外部网络的特定端口">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-02-21T04:02:46.000Z">
+<meta property="article:modified_time" content="2025-02-21T04:09:23.253Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -67,9 +71,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-内网穿透和异地组网" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-内网穿透和异地组网" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/02/21/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%92%8C%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/" class="article-date">
   <time class="dt-published" datetime="2025-02-21T04:02:46.000Z" itemprop="datePublished">2025-02-21</time>
@@ -82,8 +84,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/02/21/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%92%8C%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/">内网穿透和异地组网</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      内网穿透和异地组网
     </h1>
   
 
@@ -167,157 +169,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-路由器DMZ" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/02/19/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/" class="article-date">
-  <time class="dt-published" datetime="2025-02-19T10:09:40.093Z" itemprop="datePublished">2025-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/02/19/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/">路由器小结</a>
-    </h1>
+    <a href="/2025/02/19/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">路由器小结</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="路由器DMZ"><a href="#路由器DMZ" class="headerlink" title="路由器DMZ"></a>路由器DMZ</h2><p>路由器的DMZ（Demilitarized Zone，非军事区）是一种网络安全区域设置，它是为了解决安装防火墙后外部网络无法访问内部网络服务器的问题而设立的一个非安全系统与安全系统之间的缓冲区。以下是关于它的详细介绍：</p>
-<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><ul>
-<li><p><strong>提供特定服务访问</strong>：允许外部网络有限度地访问内部网络中的特定服务器或设备。比如企业希望对外提供Web服务、FTP服务等，又不想让整个内部网络暴露在外部风险下，就可以把提供这些服务的服务器放置在DMZ区域。这样，外部用户可以访问DMZ中的服务器获取相应服务，但无法直接访问内部网络的其他资源，在一定程度上保障了内部网络的安全。</p>
-</li>
-<li><p><strong>隔离与保护内部网络</strong>：将对外服务的设备与内部核心网络隔离开来。如果DMZ中的服务器受到攻击，攻击者也较难进一步渗透到内部网络，从而为内部网络中的数据和设备提供了额外的安全防护层。</p>
-</li>
-</ul>
-<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><ul>
-<li><strong>端口映射</strong>：路由器通过配置端口映射规则，将外部网络请求的特定端口映射到DMZ区域内设备的相应端口。例如，当外部用户访问服务器的80端口（通常用于HTTP服务）时，路由器会将这个请求转发到DMZ中Web服务器的80端口，使外部用户能够访问到Web服务器上的网页内容。</li>
-<li><strong>访问控制</strong>：路由器或防火墙会根据预设的访问控制列表（ACL）来决定哪些外部流量可以进入DMZ，以及DMZ中的设备可以访问哪些外部资源和内部网络资源。一般来说，会允许外部对DMZ中特定服务端口的访问，同时限制其他不必要的访问，以确保只有合法的流量能够通过。</li>
-</ul>
-<h3 id="设置步骤"><a href="#设置步骤" class="headerlink" title="设置步骤"></a>设置步骤</h3><p>不同品牌和型号的路由器设置DMZ的步骤可能会有所不同，但一般来说可以按照以下基本步骤进行：</p>
-<ol>
-<li><strong>登录路由器管理界面</strong>：在浏览器中输入路由器的管理地址，通常是192.168.1.1或192.168.0.1等，然后输入用户名和密码登录。 </li>
-<li><strong>找到DMZ设置选项</strong>：在路由器管理界面中，查找“DMZ”“虚拟服务器”或“转发规则”等相关选项。 </li>
-<li><strong>配置DMZ主机</strong>：在DMZ设置页面，输入要设置为DMZ的设备的IP地址。这个IP地址通常是内部网络中需要对外提供服务的服务器或设备的本地IP地址。</li>
-<li><strong>保存设置</strong>：完成IP地址输入后，点击“保存”或“应用”按钮，使设置生效。 虽然DMZ提供了一种让外部网络访问内部特定资源的便利方式，但也会带来一定的安全风险。因为DMZ中的设备相对更容易受到外部攻击，所以在使用DMZ时，需要谨慎配置访问规则，并确保DMZ中的设备本身具备足够的安全防护措施，如安装防火墙、杀毒软件等。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/02/19/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/" data-id="cm7e903s60000ds638fvraq77" data-title="路由器小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-My-New-Post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/02/10/My-New-Post/" class="article-date">
-  <time class="dt-published" datetime="2025-02-10T07:16:43.000Z" itemprop="datePublished">2025-02-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/02/10/My-New-Post/">My New Post</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>我打算使用博客记录我的学习过程。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/02/10/My-New-Post/" data-id="cm6yqeh7s0000g463heb61aul" data-title="My New Post" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/01/21/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2025-01-21T06:25:18.195Z" itemprop="datePublished">2025-01-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/01/21/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/01/21/hello-world/" data-id="cm663e32q00009k6357n44ycn" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
