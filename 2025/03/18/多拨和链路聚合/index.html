@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>多拨和链路聚合 | 夏天的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="多拨和链路聚合 一、多播（Multi-WAN）核心目标：通过建立多个独立的WAN连接（如PPPoE拨号），突破单条宽带线路的带宽限制，提升外网带宽。分为虚拟多拨和实线多拨。 1. 虚拟多拨，这也是目前使用最多的一种方式，但已经有了较大限制。  原理：拿少数的宽带和账号，使用 OpenWRT等固件模拟多个端口在同一物理网口上并发拨号，从而获得更多的“虚拟”宽带，随后进行负载均衡，以此获得网速叠加。需">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多拨和链路聚合">
+<meta property="og:url" content="http://example.com/2025/03/18/%E5%A4%9A%E6%8B%A8%E5%92%8C%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/index.html">
+<meta property="og:site_name" content="夏天的博客">
+<meta property="og:description" content="多拨和链路聚合 一、多播（Multi-WAN）核心目标：通过建立多个独立的WAN连接（如PPPoE拨号），突破单条宽带线路的带宽限制，提升外网带宽。分为虚拟多拨和实线多拨。 1. 虚拟多拨，这也是目前使用最多的一种方式，但已经有了较大限制。  原理：拿少数的宽带和账号，使用 OpenWRT等固件模拟多个端口在同一物理网口上并发拨号，从而获得更多的“虚拟”宽带，随后进行负载均衡，以此获得网速叠加。需">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-18T07:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-18T07:12:14.586Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="夏天的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">夏天的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-多拨和链路聚合" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/18/%E5%A4%9A%E6%8B%A8%E5%92%8C%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" class="article-date">
+  <time class="dt-published" datetime="2025-03-18T07:00:00.000Z" itemprop="datePublished">2025-03-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      多拨和链路聚合
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="多拨和链路聚合"><a href="#多拨和链路聚合" class="headerlink" title="多拨和链路聚合"></a>多拨和链路聚合</h1><hr>
+<h3 id="一、多播（Multi-WAN）"><a href="#一、多播（Multi-WAN）" class="headerlink" title="一、多播（Multi-WAN）"></a>一、多播（Multi-WAN）</h3><p><strong>核心目标</strong>：通过建立<strong>多个独立的WAN连接</strong>（如PPPoE拨号），突破单条宽带线路的带宽限制，<strong>提升外网带宽</strong>。分为<strong>虚拟多拨</strong>和<strong>实线多拨</strong>。</p>
+<p><strong>1. 虚拟多拨</strong>，这也是目前使用最多的一种方式，但已经有了较大限制。</p>
+<ul>
+<li><strong>原理：<strong>拿少数的宽带和账号，使用 OpenWRT等固件</strong>模拟多个端口</strong>在<strong>同一物理网口上</strong>并发拨号，从而获得更多的“虚拟”宽带，随后进行负载均衡，以此获得网速叠加。需要虚拟化技术，是一种单线多拨。</li>
+<li>**限制：**多数运营商会检测并发会话，采取以下限制：<ul>
+<li><strong>带宽共享</strong>：多拨后总带宽仍为单线上限（如500Mbps双拨仍为500Mbps）。</li>
+<li><strong>会话数限制</strong>：强制后拨连接踢掉先拨连接，导致仅单线生效。</li>
+<li><strong>账号封禁</strong>：频繁多拨可能触发风控，临时冻结账号。</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. 实线多拨</strong>，是一种稳定的合规的多拨形式。</p>
+<ul>
+<li>**原理：**需要多个宽带账号，使用多根物理网线，这些网线可以来自同一运营商，也可以来自不同运营商。然后通过负载均衡设备，例如软路由，把多条线路的带宽进行整合。这种方式通常不需要依赖虚拟技术，而是直接通过多个物理接口来实现带宽叠加。</li>
+</ul>
+<hr>
+<h4 id="1-应用场景"><a href="#1-应用场景" class="headerlink" title="1. 应用场景"></a><strong>1. 应用场景</strong></h4><ul>
+<li><strong>家庭&#x2F;小型企业</strong>：运营商宽带套餐有带宽上限（如500Mbps），通过多拨叠加到1Gbps。</li>
+<li><strong>多ISP冗余</strong>：同时接入电信和联通宽带，避免单运营商故障导致断网。</li>
+</ul>
+<h4 id="2-实际效果"><a href="#2-实际效果" class="headerlink" title="2. 实际效果"></a><strong>2. 实际效果</strong></h4><ul>
+<li><strong>带宽叠加条件</strong>：<ul>
+<li><strong>运营商策略开放</strong>：允许同一账号并发拨号且不限制带宽池（如某些地区的电信宽带）。</li>
+<li><strong>测速验证</strong>：通过多线程下载或SpeedTest测试，若双拨后速度接近翻倍则为成功。</li>
+</ul>
+</li>
+<li><strong>典型案例</strong>：<ul>
+<li>用户使用OpenWRT路由器，单线双拨后，下载速度从500Mbps提升至900Mbps（接近物理网口上限1Gbps）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-局限性"><a href="#3-局限性" class="headerlink" title="3. 局限性"></a><strong>3. 局限性</strong></h4><ul>
+<li><p><strong>运营商封堵</strong>：部分运营商会检测并发拨号，强制下线多余连接（如移动宽带常见）。</p>
+</li>
+<li><p><strong>IP地址冲突</strong>：不同WAN的公网IP可能影响部分服务（如在线游戏、远程访问）。</p>
+</li>
+</ul>
+<hr>
+<hr>
+<h3 id="二、链路聚合（Link-Aggregation）"><a href="#二、链路聚合（Link-Aggregation）" class="headerlink" title="二、链路聚合（Link Aggregation）"></a>二、链路聚合（Link Aggregation）</h3><p><strong>核心目标</strong>：将<strong>多个物理端口绑定为单一逻辑通道</strong>，<strong>提升内网设备间传输带宽和可靠性</strong>。</p>
+<ul>
+<li><strong>原理：</strong><ul>
+<li><strong>流量分发</strong>：基于MAC地址、IP或端口号的哈希算法分配流量。</li>
+<li><strong>冗余容错</strong>：某条物理链路故障时，流量自动迁移至其他链路。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-应用场景-1"><a href="#1-应用场景-1" class="headerlink" title="1. 应用场景"></a><strong>1. 应用场景</strong></h4><ul>
+<li><strong>服务器与交换机互联</strong>：通过4x1Gbps链路聚合实现4Gbps带宽，避免NAS或服务器成为瓶颈。</li>
+<li><strong>核心网络设备互联</strong>：交换机间通过聚合链路提升主干带宽。</li>
+</ul>
+<h4 id="2-实际效果-1"><a href="#2-实际效果-1" class="headerlink" title="2. 实际效果"></a><strong>2. 实际效果</strong></h4><ul>
+<li><strong>带宽提升</strong>：<ul>
+<li>聚合后的总带宽&#x3D;单端口带宽×可用链路数（如2x1Gbps聚合后理论带宽2Gbps）。</li>
+<li><strong>注意</strong>：单条TCP连接仍受限于单端口带宽（如单个文件下载最高1Gbps）。</li>
+</ul>
+</li>
+<li><strong>典型案例</strong>：<ul>
+<li>企业使用支持LACP的交换机和NAS，通过2条10Gbps光纤聚合，实现20Gbps内网传输。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-局限性-1"><a href="#3-局限性-1" class="headerlink" title="3. 局限性"></a><strong>3. 局限性</strong></h4><ul>
+<li><p><strong>硬件要求</strong>：需交换机、路由器、终端设备均支持聚合协议。</p>
+</li>
+<li><p><strong>配置复杂度</strong>：需两端设备匹配聚合模式（LACP&#x2F;静态）。</p>
+</li>
+</ul>
+<h2 id="三、两者对比"><a href="#三、两者对比" class="headerlink" title="三、两者对比"></a>三、两者对比</h2><table>
+<thead>
+<tr>
+<th align="left"><strong>特性</strong></th>
+<th align="left"><strong>多拨（Multi-WAN）</strong></th>
+<th align="left"><strong>链路聚合（Link Aggregation）</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>应用场景</strong></td>
+<td align="left">外网（WAN侧），通过多个拨号连接提升带宽</td>
+<td align="left">内网（LAN侧），聚合交换机或设备间物理链路</td>
+</tr>
+<tr>
+<td align="left"><strong>技术原理</strong></td>
+<td align="left">基于PPPoE多次拨号，获取多个公网IP地址</td>
+<td align="left">基于LACP（动态聚合）或静态绑定，合并多个端口</td>
+</tr>
+<tr>
+<td align="left"><strong>带宽叠加条件</strong></td>
+<td align="left">依赖运营商策略（是否允许并发拨号及带宽叠加）</td>
+<td align="left">依赖两端设备均支持聚合协议（如LACP）</td>
+</tr>
+<tr>
+<td align="left"><strong>IP地址</strong></td>
+<td align="left">每个拨号连接独立公网IP</td>
+<td align="left">聚合后的逻辑接口共享同一IP或MAC地址</td>
+</tr>
+<tr>
+<td align="left"><strong>典型用途</strong></td>
+<td align="left">家庭&#x2F;小型企业突破单线带宽限制</td>
+<td align="left">数据中心&#x2F;企业内网提升服务器或交换机间带宽</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/18/%E5%A4%9A%E6%8B%A8%E5%92%8C%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" data-id="cm8e5znwx0000qo63ancmeo4c" data-title="多拨和链路聚合" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/03/18/%E7%A9%BF%E9%80%8F%E7%BB%84%E7%BD%91%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E6%80%9D%E8%B7%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">穿透和组网的网络拓扑思路</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/18/%E5%A4%9A%E6%8B%A8%E5%92%8C%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/">多拨和链路聚合</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/18/%E7%A9%BF%E9%80%8F%E7%BB%84%E7%BD%91%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E6%80%9D%E8%B7%AF/">穿透和组网的网络拓扑思路</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/18/%E6%8A%95%E8%B5%84%E7%AC%94%E8%AE%B0/">投资想法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/02/21/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%92%8C%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/">内网穿透和异地组网</a>
+          </li>
+        
+          <li>
+            <a href="/2025/02/19/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/">路由器小结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
