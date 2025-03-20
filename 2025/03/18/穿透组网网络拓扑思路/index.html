@@ -6,15 +6,15 @@
   
   <title>穿透和组网的网络拓扑思路 | 夏天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="穿透和组网的网络拓扑思路 代理模式内网穿透使用NPS（或FRP），利用反向代理，实现内网穿透（即把一台内网中设备暴露到公网中去）设备要求：  用于桥接的公网服务器。（可以为云服务器）  一台内网中提供服务的服务器。   配置流程（以云服务器为例）  使用workbench浏览器或第三方SSH工具（如__WinSCP__、PuTTY、XShell）连接到云服务器。 在__桥接服务器__（任意带公网i">
+  <meta name="description" content="穿透和组网的网络拓扑思路 代理模式内网穿透使用NPS（或FRP），利用反向代理，实现内网穿透（即把一台内网中设备暴露到公网中去）设备要求：  用于桥接的公网服务器。（可以为云服务器）  一台内网中提供服务的服务器。   配置流程（以云服务器为例）  使用workbench浏览器或第三方SSH工具（如WinSCP、PuTTY、XShell）连接到云服务器。 在桥接服务器（任意带公网ip的服务器，例如">
 <meta property="og:type" content="article">
 <meta property="og:title" content="穿透和组网的网络拓扑思路">
 <meta property="og:url" content="http://example.com/2025/03/18/%E7%A9%BF%E9%80%8F%E7%BB%84%E7%BD%91%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E6%80%9D%E8%B7%AF/index.html">
 <meta property="og:site_name" content="夏天的博客">
-<meta property="og:description" content="穿透和组网的网络拓扑思路 代理模式内网穿透使用NPS（或FRP），利用反向代理，实现内网穿透（即把一台内网中设备暴露到公网中去）设备要求：  用于桥接的公网服务器。（可以为云服务器）  一台内网中提供服务的服务器。   配置流程（以云服务器为例）  使用workbench浏览器或第三方SSH工具（如__WinSCP__、PuTTY、XShell）连接到云服务器。 在__桥接服务器__（任意带公网i">
+<meta property="og:description" content="穿透和组网的网络拓扑思路 代理模式内网穿透使用NPS（或FRP），利用反向代理，实现内网穿透（即把一台内网中设备暴露到公网中去）设备要求：  用于桥接的公网服务器。（可以为云服务器）  一台内网中提供服务的服务器。   配置流程（以云服务器为例）  使用workbench浏览器或第三方SSH工具（如WinSCP、PuTTY、XShell）连接到云服务器。 在桥接服务器（任意带公网ip的服务器，例如">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-18T07:00:00.000Z">
-<meta property="article:modified_time" content="2025-03-18T07:13:28.444Z">
+<meta property="article:modified_time" content="2025-03-20T02:06:52.040Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -103,13 +103,13 @@
 </ol>
 <p>配置流程（以云服务器为例）</p>
 <ol>
-<li>使用workbench浏览器或第三方SSH工具（如__WinSCP__、<strong>PuTTY</strong>、<strong>XShell</strong>）连接到云服务器。</li>
-<li>在__桥接服务器__（任意带公网ip的服务器，例如云服务器）下载nps（或frp,github中即可下载）服务端，并按要求配置服务器信息，启动服务端程序。（输入命令 .&#x2F;nps start）</li>
-<li>访问__桥接服务器IP地址:端口号__进入管理界面，尝试登录nps，检测是否成功部署服务端程序。</li>
-<li>进入nps管理界面（即__3.__中的网址），添加一个客服端，复制这个客户端对应的带有密钥的命令。</li>
-<li>在需要被穿透、暴露在公网的服务器中下载nps客户端。在nps文件夹的可执行文件(nps.exe)文件夹中（或上一级文件夹），启动gitbash命令行，执行__4.__中复制的命令。</li>
+<li>使用workbench浏览器或第三方SSH工具（如<strong>WinSCP</strong>、<strong>PuTTY</strong>、<strong>XShell</strong>）连接到云服务器。</li>
+<li>在<strong>桥接服务器</strong>（任意带公网ip的服务器，例如云服务器）下载nps（或frp,github中即可下载）服务端，并按要求配置服务器信息，启动服务端程序。（输入命令 .&#x2F;nps start）</li>
+<li>访问<strong>桥接服务器IP地址:端口号</strong>进入管理界面，尝试登录nps，检测是否成功部署服务端程序。</li>
+<li>进入nps管理界面（即**3.**中的网址），添加一个客服端，复制这个客户端对应的带有密钥的命令。</li>
+<li>在需要被穿透、暴露在公网的服务器中下载nps客户端。在nps文件夹的可执行文件(nps.exe)文件夹中（或上一级文件夹），启动gitbash命令行，执行**4.**中复制的命令。</li>
 <li>检查nps服务界面，服务器是否成功上线。失败检查UPnP（默认开启），防火墙等。</li>
-<li>在__tcp(udp)隧道__中，添加__转发规则__。服务端端口为任意空端口（0~65535）,目标（即本地ip地址与端口）填写本地路由转发后的ip地址（ipconfig即可查看本地Ip地址，端口填写对应开放软件的端口），客户端ID为__4.__中添加的客户端ID。</li>
+<li>在<strong>tcp(udp)隧道</strong>中，添加<strong>转发规则</strong>。服务端端口为任意空端口（0~65535）,目标（即本地ip地址与端口）填写本地路由转发后的ip地址（ipconfig即可查看本地Ip地址，端口填写对应开放软件的端口），客户端ID为**4.**中添加的客户端ID。</li>
 </ol>
 <hr>
 <h3 id="代理模式P2P隧道配置"><a href="#代理模式P2P隧道配置" class="headerlink" title="代理模式P2P隧道配置"></a>代理模式P2P隧道配置</h3><h4 id="使用nps，在经过反向代理后，直接打通隧道，后续流量不需要桥接服务器转发，可以直接传输。"><a href="#使用nps，在经过反向代理后，直接打通隧道，后续流量不需要桥接服务器转发，可以直接传输。" class="headerlink" title="使用nps，在经过反向代理后，直接打通隧道，后续流量不需要桥接服务器转发，可以直接传输。"></a>使用nps，在经过反向代理后，直接打通隧道，后续流量不需要桥接服务器转发，可以直接传输。</h4><p>设备要求：与内网穿透相同。</p>
@@ -118,13 +118,13 @@
 <li>基础配置参见内网穿透反向代理部分。</li>
 <li>重新配置服务端的配置文件。（添加p2p_ip和p2p_port）</li>
 <li>在nps管理界面中，添加一个p2p代理，目标（IP:端口）填写局域网中要想连接的设备IP地址，端口填写对应软件需要端口。客户端ID与创建客户端时保持一致，密钥填写任意字符。复制带有密钥的命令。</li>
-<li>将__3.__中复制的密钥在客户端执行。</li>
-<li>参照内网穿透部分__6.__ __7.__部分，验证是否部署成功。</li>
+<li>将**3.**中复制的密钥在客户端执行。</li>
+<li>参照内网穿透部分<strong>6.</strong> **7.**部分，验证是否部署成功。</li>
 </ol>
 <hr>
 <h3 id="家庭VPN配置-（使用L2TP协议）"><a href="#家庭VPN配置-（使用L2TP协议）" class="headerlink" title="家庭VPN配置 （使用L2TP协议）"></a>家庭VPN配置 （使用L2TP协议）</h3><p>设备要求：</p>
 <ol>
-<li>具有公网IP的服务器。（如果没有可以参照__代理模式的内网穿透__进行配置）</li>
+<li>具有公网IP的服务器。（如果没有可以参照<strong>代理模式的内网穿透</strong>进行配置）</li>
 <li>一台具有VPN功能的路由器（或选择软路由），并且路由器处于路由模式，而不是光猫下的桥接（公网ip必备条件）。</li>
 </ol>
 <p>配置流程：（以家用动态公网IP，路由设置为爱快软路由为例）</p>
