@@ -92,7 +92,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h1 id="多拨和链路聚合"><a href="#多拨和链路聚合" class="headerlink" title="多拨和链路聚合"></a>多拨和链路聚合</h1><hr>
-<h3 id="一、多播（Multi-WAN）"><a href="#一、多播（Multi-WAN）" class="headerlink" title="一、多播（Multi-WAN）"></a>一、多播（Multi-WAN）</h3><p><strong>核心目标</strong>：通过建立<strong>多个独立的WAN连接</strong>（如PPPoE拨号），突破单条宽带线路的带宽限制，<strong>提升外网带宽</strong>。分为<strong>虚拟多拨</strong>和<strong>实线多拨</strong>。</p>
+<h3 id="一、多拨（Multi-WAN）"><a href="#一、多拨（Multi-WAN）" class="headerlink" title="一、多拨（Multi-WAN）"></a>一、多拨（Multi-WAN）</h3><p><strong>核心目标</strong>：通过建立<strong>多个独立的WAN连接</strong>（如PPPoE拨号），突破单条宽带线路的带宽限制，<strong>提升外网带宽</strong>。分为<strong>虚拟多拨</strong>和<strong>实线多拨</strong>。</p>
 <p><strong>1. 虚拟多拨</strong>，这也是目前使用最多的一种方式，但已经有了较大限制。</p>
 <ul>
 <li><strong>原理：<strong>拿少数的宽带和账号，使用 OpenWRT等固件</strong>模拟多个端口</strong>在<strong>同一物理网口上</strong>并发拨号，从而获得更多的“虚拟”宽带，随后进行负载均衡，以此获得网速叠加。需要虚拟化技术，是一种单线多拨。</li>
